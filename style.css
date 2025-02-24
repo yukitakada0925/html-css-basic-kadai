@@ -63,24 +63,23 @@ footer {
 }
 
 
-footer a {
+a {
   color: rgb(255, 255, 255);
 }
 
-footer a:visited {
+a:visited {
   color: rgb(193, 234, 251);
 }
 
-footer a:hover {
+a:hover {
   color: rgb(245, 178, 168);
 }
 
 
 @media (max-width: 768px) {
   #parent {
-     display: block;
-  }
-
+    flex-direction: column;
+}
   .contents h2 {
       font-size: 30px;
   }
