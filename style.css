@@ -1,91 +1,118 @@
-body, h1, p {
+/* 全体設定 */
+body {
+  min-width: 375px;
   margin: 0;
+  font-family: Arial, sans-serif;
 }
 
-p, a {
-  font-size: 20px;
+/* PC用ナビゲーション */
+#nav-pc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
 }
 
-header {
-  background-color: rgb(244, 79, 79);
-  text-align: center;
+#main-visual{
+  margin-left: 20PX;
+  margin-right: 20px;
+}
+#main-visual > img{
+  max-width: 100%;
+}
+
+#nav-pc .logo img {
+  height: 40px;
+}
+
+#nav-pc ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+#nav-pc ul li {
+  margin-left: 20px;
+}
+
+#nav-pc ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+/* スマホ用メニューアイコン */
+#menu-sp {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+/* スマホ用ナビゲーション */
+#nav-sp {
+  background-color: #ce933e;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+  z-index: 100;
+  padding: 20px;
+}
+
+#nav-sp ul {
+  padding-left: 0;
+}
+
+#nav-sp li {
+  list-style: none;
   margin-bottom: 20px;
 }
 
-header h1 {
-  color: rgb(255, 255, 255);
+/* 閉じるボタン */
+#close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
 }
 
-main {
-  padding: 10px;
+/* ロゴ */
+#logo-sp {
+  display: block;
+  margin-bottom: 30px;
 }
 
-#parent {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap; 
-}
-
-
-.contents {
-  border: 3px solid rgb(238, 204, 204);
-  flex-basis: 25%;
-  padding: 10px 15px;
-  margin: 20px 0;
-  text-align: center;
-}
-
-
-.contents h2 {
-  font-size: 25px;
-  border-bottom: 3px dotted rgb(236, 122, 122);
-}
-
-.contents h2::before {
-  content: "●";
-  color: rgb(239, 111, 139);
-}
-
-.contents p:nth-of-type(2)::first-letter {
+/* スマホ用ナビゲーションのリンク */
+#nav-sp a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
   font-weight: bold;
-  color: rgb(97, 206, 249);
 }
 
-.contents img {
-  width: 70%;
-  margin: 10px 0;
+#nav-sp a:hover {
+  text-decoration: underline;
 }
 
-footer {
-  background-color: rgb(244, 79, 79);
-  text-align: center;
-  padding: 10px 0;
-}
-
-
-a {
-  color: rgb(255, 255, 255);
-}
-
-a:visited {
-  color: rgb(193, 234, 251);
-}
-
-a:hover {
-  color: rgb(245, 178, 168);
-}
-
-
-@media (max-width: 768px) {
-  #parent {
-    flex-direction: column;
-}
-  .contents h2 {
-      font-size: 30px;
+/* スマホ用レイアウト */
+@media screen and (max-width: 767px) {
+  #nav-pc >ul {
+      display: none;
   }
 
-  p {
-      font-size: 25px;
+  #menu-sp {
+      display: block;
   }
+}
 
+/* PC用レイアウト（SPメニューを非表示） */
+@media screen and (min-width: 768px) {
+  #menu-sp, #nav-sp {
+      display: none;
+  }
 }
